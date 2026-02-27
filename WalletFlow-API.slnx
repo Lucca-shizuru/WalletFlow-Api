@@ -1,5 +1,7 @@
 <Solution>
-  <Project Path="WalletFlow-API/WalletFlow-API.csproj" />
+  <Folder Name="/Itens de Solução/">
+    <File Path=".gitignore" />
+  </Folder>
   <Project Path="WalletFlow.API/WalletFlow.API.csproj" />
   <Project Path="WalletFlow.Application/WalletFlow.Application.csproj" />
   <Project Path="WalletFlow.Domain/WalletFlow.Domain.csproj" />

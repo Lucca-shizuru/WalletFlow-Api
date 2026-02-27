@@ -10,11 +10,13 @@ namespace WalletFlow.Domain.Entities
         public string Owner { get; private set; }
         public decimal Balance { get; private set; }
 
+        public DateTime CreatedAt { get; private set; }
         public Account(string owner)
         {
             Id = Guid.NewGuid();
             Owner = owner;
             Balance = 0;
+            CreatedAt = DateTime.Now;
 
             if (string.IsNullOrWhiteSpace(owner))
             {
