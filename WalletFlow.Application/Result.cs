@@ -15,7 +15,7 @@ namespace WalletFlow.Application
             Error = error;
         }
 
-        public static Result success () => new Result(true, null);
-        public static Result failure (string error) => new Result(false, error);
+        public static Result Success () => new Result(true, null);
+        public static Result Failure (string error) => new Result(false, error);
     }
 }

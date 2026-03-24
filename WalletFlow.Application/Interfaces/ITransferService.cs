@@ -7,7 +7,7 @@ namespace WalletFlow.Application.Interfaces
 {
     public interface ITransferService
     {
-        Result ExecuteTransfer(Account fromAccountId, Account toAccountId, decimal amount);
+        Task<Result> ExecuteTransfer(Guid fromId, Guid toId, decimal amount);
         
             
         
