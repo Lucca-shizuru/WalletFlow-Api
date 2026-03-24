@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Itens de Solução/">
     <File Path=".gitignore" />
+    <File Path="docker-compose.yml" />
   </Folder>
   <Project Path="WalletFlow.API/WalletFlow.API.csproj" />
   <Project Path="WalletFlow.Application/WalletFlow.Application.csproj" />
