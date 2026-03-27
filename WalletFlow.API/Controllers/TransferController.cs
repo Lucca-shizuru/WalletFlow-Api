@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletFlow.API.Dtos;
 using WalletFlow.Application.Interfaces;
-using WalletFlow.Application.Services;
+using WalletFlow.Application.Services; 
 
 namespace WalletFlow.API.Controllers
 {
@@ -12,9 +12,9 @@ namespace WalletFlow.API.Controllers
     {
         private readonly ITransferService _transferService;
 
-        public TransferController(ITransferService traferService)
+        public TransferController(ITransferService transferService)
         {
-            _transferService = traferService;
+            _transferService = transferService;
         }
 
         [HttpPost]
