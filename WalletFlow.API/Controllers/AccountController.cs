@@ -16,9 +16,9 @@ namespace WalletFlow.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] string ownerName)
+        public async Task<IActionResult> Create([FromBody] string ownerName, string email)
         {
-            var account = new Account(ownerName);
+            var account = new Account(ownerName, email);
 
   
             account.Deposit(1000);
