@@ -8,7 +8,7 @@ namespace WalletFlow.Infrastructure.Context
     {
         public WalletFlowContext(DbContextOptions<WalletFlowContext> options) : base(options) { }
 
-        
+
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
@@ -17,9 +17,10 @@ namespace WalletFlow.Infrastructure.Context
             modelBuilder.Entity<Account>().HasKey(a => a.Id);
             modelBuilder.Entity<Account>().Property(a => a.Balance).HasPrecision(18, 2);
 
-            modelBuilder.Entity<Transaction>().HasKey(t => t.Id);
+            modelBuilder.Entity<Transaction>().HasKey(t => t.TransactionId);
             modelBuilder.Entity<Transaction>().Property(t => t.Amount).HasPrecision(18, 2);
 
             base.OnModelCreating(modelBuilder);
         }
+    }
 }

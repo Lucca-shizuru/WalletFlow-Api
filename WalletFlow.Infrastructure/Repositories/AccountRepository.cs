@@ -1,27 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WalletFlow.Domain.Entities;
+﻿using WalletFlow.Domain.Entities;
 using WalletFlow.Domain.Repositories.Interfaces;
+using WalletFlow.Infrastructure.Context;
 
 namespace WalletFlow.Domain.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
-       
-        public Task AddAsync(Account account)
+        private readonly WalletFlowContext _context;
+
+        public AccountRepository(WalletFlowContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Account> GetByIdAsync(Guid id)
+        public async Task<Account> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Accounts.FindAsync(id);
         }
 
-        public Task UpdateAsync(Account account)
+        public async Task UpdateAsync(Account account)
         {
-            throw new NotImplementedException();
+            _context.Accounts.Update(account);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddAsync(Account account)
+        {
+            await _context.Accounts.AddAsync(account);
+            await _context.SaveChangesAsync();
         }
     }
 }
